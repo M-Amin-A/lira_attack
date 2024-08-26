@@ -1,10 +1,10 @@
 envname='backdoors'
-if output=$(conda activate ${envname});
+if output=$(conda activate ${envname} -y);
 then
     conda activate backdoors
 else
     echo "Creating ${envname} conda environment"
-    conda create --name ${envname} python=3.7
+    conda create --name ${envname} python=3.7 -y
     conda activate ${envname}
     pip install -r requirements.txt
 
